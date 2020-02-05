@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const Button = ({city, showCity}) => {
-    console.log(showCity)
 
     const handleClick = (event) => {
+        event.preventDefault()
         showCity(city)
     }
 

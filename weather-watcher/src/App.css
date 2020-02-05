@@ -37,12 +37,13 @@ body {
 
 .city-map {
   display: flex;
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRpxfKjr0tEkyNHf95tS2yqajLvlUyt2eCQEigQCxTtc46lx65H);
+  /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRpxfKjr0tEkyNHf95tS2yqajLvlUyt2eCQEigQCxTtc46lx65H); */
+  background-image: url(map.png);
   box-shadow: 2px 2px 8px 8px rgb(160, 155, 155);
   background-repeat: no-repeat;
   min-height: 545px;
   width: 900px; 
-  background-size: cover;
+  background-size: 100%;
 }
 
 .page-body {
@@ -53,14 +54,32 @@ body {
 .side-panel {
   display: flex;
   flex-direction: column;
+  text-align: center;
   margin-left: 3%;
   margin-right: 3%;
-  min-height: 650px;
+  min-height: 625px;
   min-width: 425px;
-  background-image: url(https://lh3.googleusercontent.com/proxy/0gc0wtar-x8yInY-yEqOui8f_2YH60F701kMdd5IEZ-EqxfHByaWPolJoVNNV4XRT7eNF0-JF_FmiJRDxJQIe2qKBR6dGSXL6V_EwE2odZpiSsDMpKmlj7eQzQQqFeNnW0OjAtGa99W_ozy7W77D1bKuiw13sNo0m4V3ICgHnA);
+  max-width: 425px;
+  max-height: 625%;
+  background-image: url(https://lh3.googleusercontent.com/proxy/iHsj81m8SaDkaqNtfb5zPZd59HVfFQ176ajpYN4uQhYF7K4Gyu8aRnrLvo1UE51nL0zUEOOY9y-yTojEBGbDo0ur3E5H0cdLT43RN_lQvVI);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 250%;
   box-shadow: 2px 2px 8px 8px rgb(61, 59, 59);
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.total-summary {
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.temperature, .longitude, .latitude, .gust, .speed, .summary {
+  display: flex;
+  box-shadow: 1px 1px 4px 4px rgb(160, 155, 155);
+  justify-content: center;
+  font-size: larger;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .search {
@@ -76,8 +95,9 @@ body {
 }
 
 .show-city {
-margin: 2%;
-text-align: center;
+margin: 3%;
+display: flex;
+flex-direction: column;
 }
 
 button {
@@ -94,14 +114,14 @@ button {
 }
 
 .CO {
-margin-left: 22%;
-margin-top: 18%;
+margin-left: 21%;
+margin-top: 19%;
 position: absolute;
 height: 5%;
 }
 
 .MA {
-  margin-left: 60%;
+  margin-left: 62%;
   margin-top: 11%;
   position: absolute;
   height: 5%;
@@ -109,36 +129,36 @@ height: 5%;
 
 .NY {
 position: absolute;
-margin-left: 50%;
+margin-left: 53%;
 margin-top: 10%;
 height: 5%;
 }
 
 .CA {
   position: absolute;
-  margin-left: 5%;
-  margin-top: 18%;
+  margin-left: 1%;
+  margin-top: 20%;
   height: 5%;
 }
 
 .AZ {
   position: absolute;
-  margin-left: 14.5%;
-  margin-top: 24%;
+  margin-left: 12%;
+  margin-top: 25%;
   height: 5%;
 }
       
 .TX {
   position: absolute;
-  margin-left: 29%;
-  margin-top: 30%;
+  margin-left: 28%;
+  margin-top: 30.5%;
   height: 5%;
 }
 
 .PA {
   position: absolute;
-  margin-left: 51%;
-  margin-top: 15%;
+  margin-left: 53%;
+  margin-top: 14%;
   height: 5%;
 }
 
@@ -159,9 +179,15 @@ height: 5%;
 
 .WA {
   position: absolute;
-  margin-left: 9%;
+  margin-left: 6.5%;
   margin-top: 3.75%;
   height: 5%;
 
+}
+
+.searchbutton {
+  margin-top: 2%;
+  min-height: 5%;
+  min-width: 8%;
 }
 

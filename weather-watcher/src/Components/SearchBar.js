@@ -7,14 +7,14 @@ export const SearchBar =({searchTerm, updateSearchTerm, filterCity}) => {
     }
 
     const handleSubmit = (event) => {
-        console.log("yolo")
+        event.preventDefault()
         filterCity()
     }
         return (
             <div className="search">
                 <form > 
                 <input className="form" type="text" value={searchTerm} onChange={handleChange} placeholder="Choose a City"/>
-                <button onClick={handleSubmit}>Search</button>
+                <button onClick={handleSubmit} className="searchbutton">Search</button>
                 </form>
             </div>
         )

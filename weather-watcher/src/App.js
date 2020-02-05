@@ -13,7 +13,8 @@ class App extends Component {
     cities: [],
     city: {},
     searchTerm: "",
-    isMapShowing: false
+    isMapShowing: false,
+    stats: []
   }
 
   toggleMap = () => {
@@ -24,7 +25,8 @@ class App extends Component {
 
   showCity = (city) =>{
     this.setState({
-      city: city
+      city: city,
+      stats: city.city_weathers[0]
     })
   }
 
@@ -34,20 +36,30 @@ class App extends Component {
     })
   }
 
+  // filterCity = () => {
+  //   const filteredCity = this.state.cities
+  //   .filter(city => {
+  //     return city.name.toLowerCase().includes(this.state.searchTerm.toLocaleLowerCase()) 
+  //   })
+  //   this.setState({
+  //     city: {...filteredCity}
+  //   })
+  // }
+
+
   filterCity = () => {
     const filteredCity = this.state.cities
-    .filter(city => {
-      return city.name.toLowerCase().includes(this.state.searchTerm.toLocaleLowerCase()) 
-    })
-    this.setState({
-      city: {...filteredCity}
-    })
+      .filter(city => {
+        return city.name.toLowerCase().includes(this.state.searchTerm.toLocaleLowerCase())
+      })
+    this.showCity({ ...filteredCity }[0])
   }
 
     componentDidMount(){
       fetch("http://localhost:3000/cities")
       .then(response => response.json())
-      .then(cities => this.setState({ cities: cities }))
+      // .then(cityStats => console.log(cityStats[0].city_weathers[0].summary))
+      .then(cities => this.setState({ cities: cities}))
     }
 
   render() {
@@ -58,7 +70,7 @@ class App extends Component {
           <div className="side-panel">
             <SearchBar searchTerm={this.state.searchTerm} updateSearchTerm={this.updateSearchTerm} filterCity={this.filterCity}/>
             {this.state.city 
-            ? <CitiesWatch city={this.state.city}/>
+            ? <CitiesWatch city={this.state.city} cities={this.state.cities} stats={this.state.stats} />
             : null
             }
           </div>
