@@ -1,5 +1,7 @@
 A 1-day hackathon collaboration project where a group of students built a rails backend to communicate with my React.js frontend given a specific theme. 
 
+![Screenshot](home.png)
+
 ## Video Walk Through
 
 * [Walk Through Video]()
@@ -43,10 +45,12 @@ There are no dependencies for this application.
 
 The main features of the app include clicking on the show map button to toggle the map, clicking locations to display weather information, or using the filter input to filter by location without using the map. 
 
+![Screenshot](map.png)
+
 ### Operation Overview
 
 From the landing page, click on the show map button to display the interactive map. Clicking this button back and forth will toggle the map's display. From here, the user can click on the listed locations to display simple weather data from the NASA API. The user can alternatively filter for location using the filter nav bar at the top. 
 
-![Screenshot](home.png) 
+![Screenshot](all.png) 
 
 	
